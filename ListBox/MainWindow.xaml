@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListBox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="390.121" Width="433.468">
+        Title="MainWindow" Height="427.108" Width="433.468">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFD66200" Offset="0.163"/>
@@ -18,9 +18,22 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <ListBox x:Name="lstColores" HorizontalAlignment="Left" Height="258" Margin="104,33,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}"/>
-        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="23" Margin="255,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="Black" Foreground="White"/>
-        <Button x:Name="btnNuevoColor" Content="Nuevo Color" HorizontalAlignment="Left" Margin="255,91,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.98,-0.795" Click="BtnNuevoColor_Click"/>
+        <ListBox x:Name="lstColores" HorizontalAlignment="Left" Height="290" Margin="70,33,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" SelectionChanged="lstColores_SelectionChanged"/>
+        <Button x:Name="btnNuevoColor" Content="Nuevo Color" HorizontalAlignment="Left" Margin="300,356,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.98,-0.795" Click="BtnNuevoColor_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,33,0,0" TextWrapping="Wrap" Text="Nombre:" VerticalAlignment="Top" Height="15"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="255,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,81,0,0" TextWrapping="Wrap" Text="Hexadecimal" VerticalAlignment="Top" Height="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,129,0,0" TextWrapping="Wrap" Text="RGB" VerticalAlignment="Top" Height="15"/>
+        <TextBox x:Name="txtHexa" HorizontalAlignment="Left" Height="23" Margin="255,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtRGB" HorizontalAlignment="Left" Height="23" Margin="255,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Height="21" Margin="70,360,0,0" VerticalAlignment="Top" Width="75" Click="btnEliminar_Click"/>
+        <Button x:Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="187,356,0,0" VerticalAlignment="Top" Width="75" Click="btnActualizar_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,184,0,0" TextWrapping="Wrap" Text="Nombre:" VerticalAlignment="Top" Height="15"/>
+        <TextBox x:Name="txtNombreEditar" HorizontalAlignment="Left" Height="23" Margin="255,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,232,0,0" TextWrapping="Wrap" Text="Hexadecimal" VerticalAlignment="Top" Height="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,280,0,0" TextWrapping="Wrap" Text="RGB" VerticalAlignment="Top" Height="15"/>
+        <TextBox x:Name="txtHexaEditar" HorizontalAlignment="Left" Height="23" Margin="255,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtRGBEditar" HorizontalAlignment="Left" Height="23" Margin="255,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

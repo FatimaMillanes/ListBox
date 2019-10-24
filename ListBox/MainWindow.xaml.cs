@@ -20,26 +20,53 @@ namespace ListBox
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<string> Colores = new ObservableCollection<string>();
+        ObservableCollection<Color> Colores = new ObservableCollection<Color>();
         public MainWindow()
         {
             InitializeComponent();
-            Colores.Add("Rojo");
-            Colores.Add("Naranja");
-            Colores.Add("Amarillo");
-            Colores.Add("Verde");
-            Colores.Add("Azul");
-            Colores.Add("Indigo");
-            Colores.Add("Violeta");
+            Colores.Add(new Color("Rojo","#FF000","(255,0,0)"));
+            Colores.Add(new Color("Verde", "#F00F0", "(250,0,0)"));
+            Colores.Add(new Color("Azul", "#00FF0", "(265,25,0)"));
 
             lstColores.ItemsSource = Colores;
         }
 
         private void BtnNuevoColor_Click(object sender, RoutedEventArgs e)
         {
-            Colores.Add(txtColor.Text);
-            txtColor.Text = "";
+            Colores.Add(new Color(txtNombre.Text,txtHexa.Text,txtRGB.Text)) ;
+            txtNombre.Text = "";
+            txtHexa.Text = "";
+            txtRGB.Text = "";
+
+            //Colores.Add();
+            //txtColor.Text = "";
            
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if(lstColores.SelectedIndex != -1)
+            {
+                Colores.RemoveAt(lstColores.SelectedIndex);
+            }
+        }
+
+        private void lstColores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txtNombreEditar.Text = Colores[lstColores.SelectedIndex].Nombre;
+            txtHexaEditar.Text = Colores[lstColores.SelectedIndex].Hexadecimal;
+            txtRGBEditar.Text = Colores[lstColores.SelectedIndex].RGB;
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstColores.SelectedIndex != -1)
+            {
+                Colores[lstColores.SelectedIndex].Nombre = txtNombreEditar.Text;
+                Colores[lstColores.SelectedIndex].Hexadecimal = txtHexaEditar.Text;
+                Colores[lstColores.SelectedIndex].RGB = txtRGBEditar.Text;
+
+            }
         }
     }
 }
