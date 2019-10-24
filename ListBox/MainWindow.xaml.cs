@@ -53,9 +53,13 @@ namespace ListBox
 
         private void lstColores_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            txtNombreEditar.Text = Colores[lstColores.SelectedIndex].Nombre;
-            txtHexaEditar.Text = Colores[lstColores.SelectedIndex].Hexadecimal;
-            txtRGBEditar.Text = Colores[lstColores.SelectedIndex].RGB;
+            if(lstColores.SelectedIndex !=-1)
+            {
+                txtNombreEditar.Text = Colores[lstColores.SelectedIndex].Nombre;
+                txtHexaEditar.Text = Colores[lstColores.SelectedIndex].Hexadecimal;
+                txtRGBEditar.Text = Colores[lstColores.SelectedIndex].RGB;
+            }
+            
         }
 
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
